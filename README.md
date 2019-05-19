@@ -38,3 +38,5 @@ $ ./deploy.sh
 ```sh
 $ make build && make docker
 ```
+### Kubernetes Network Policies
+If you are restricting access to your DNS service with a Kubernetes network policy, please note that this will change the DNS pod to listen on UDP port 54 instead of the standard port 53 and you should update the policy. (the DNS service continues to listen on the standard port UDP 53).
