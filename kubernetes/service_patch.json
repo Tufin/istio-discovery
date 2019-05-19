@@ -1,0 +1,12 @@
+{
+    "spec": {
+        "ports": [
+            {
+                "protocol": "UDP", 
+                "targetPort": 54, 
+                "name": "dns", 
+                "port": 53
+            }
+        ]
+    }
+}

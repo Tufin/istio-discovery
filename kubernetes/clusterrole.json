@@ -1,0 +1,49 @@
+{
+    "rules": [
+        {
+            "apiGroups": [
+                ""
+            ], 
+            "verbs": [
+                "list", 
+                "watch"
+            ], 
+            "resources": [
+                "endpoints", 
+                "services", 
+                "pods", 
+                "namespaces"
+            ]
+        }, 
+        {
+            "apiGroups": [
+                ""
+            ], 
+            "verbs": [
+                "get"
+            ], 
+            "resources": [
+                "nodes"
+            ]
+        }, 
+        {
+            "apiGroups": [
+                "networking.istio.io"
+            ], 
+            "verbs": [
+                "create"
+            ], 
+            "resources": [
+                "serviceentries"
+            ]
+        }
+    ], 
+    "kind": "ClusterRole", 
+    "apiVersion": "rbac.authorization.k8s.io/v1beta1", 
+    "metadata": {
+        "labels": {
+            "kubernetes.io/bootstrapping": "rbac-defaults"
+        }, 
+        "name": "system:#DEPLOYMENT#"
+    }
+}

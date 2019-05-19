@@ -1,0 +1,30 @@
+{
+    "spec": {
+        "template": {
+            "spec": {
+                "containers": [
+                    {
+                        "command": [
+                            "/istio-discovery"
+                        ], 
+                        "name": "istio-discovery", 
+                        "imagePullPolicy": "IfNotPresent", 
+                        "image": "tufin/istio-discovery", 
+                        "args": [
+                            "-zones=svc.cluster.local,cluster.local", 
+                            "-forward=0.0.0.0:53", 
+                            "-address=:54"
+                        ], 
+                        "ports": [
+                            {
+                                "protocol": "UDP", 
+                                "containerPort": 54, 
+                                "name": "dns"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
